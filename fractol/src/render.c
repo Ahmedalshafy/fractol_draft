@@ -31,15 +31,15 @@ void fractol_render(t_fractol *fractol)
     mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img.img, 0, 0);
 }
 
-int coloring(int start, int end, double percentage)
+int coloring(int start, int end, double iterations)
 {
     int r;
     int g;
     int b;
 
-    r = (int)((1 - percentage) * (start >> 16 & 0xFF) + percentage * (end >> 16 & 0xFF));
-    g = (int)((1 - percentage) * (start >> 8 & 0xFF) + percentage * (end >> 8 & 0xFF));
-    b = (int)((1 - percentage) * (start & 0xFF) + percentage * (end & 0xFF));
+    r = (int)((1 - iterations) * (start >> 16 & 0xFF) + iterations * (end >> 16 & 0xFF));
+    g = (int)((1 - iterations) * (start >> 8 & 0xFF) + iterations * (end >> 8 & 0xFF));
+    b = (int)((1 - iterations) * (start & 0xFF) + iterations * (end & 0xFF));
     return ((r << 16) | (g << 8) | b);
 }
 

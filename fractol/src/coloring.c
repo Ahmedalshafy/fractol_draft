@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-void iterations(int x, int y, t_fractol *fractol)
+void pixel_iterat(int x, int y, t_fractol *fractol)
 
 {
 	t_complex	z;

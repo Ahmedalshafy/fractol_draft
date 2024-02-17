@@ -102,17 +102,19 @@ typedef struct s_fractol
 # define R 15
 
 int			ft_strcmp(const char *s1, const char *s2);
-double		ft_atof(char *s);
+double		ft_atod(char *s);
 int			close_handler(t_fractol *fractol);
 int			key_handler(int keysym, t_fractol *fractol);
 int			mouse_handler(int button, int x, int y, t_fractol *fractol);
 int			julia_track(int x, int y, t_fractol *fractol);
 void		fractol_render(t_fractol *fractol);
+int			coloring(int start, int end, double percentage);
 double		map(double unscaled_num, double new_min, double new_max,
 				double old_max);
 void		fractol_init(t_fractol *fractol);
-t_complex	sum_complex(t_complex z1, t_complex z2);
+void		main_init(t_fractol *fractol);
+t_complex	sum_complex(t_complex a, t_complex b);
 t_complex	square_complex(t_complex z);
-void		data_init(t_fractol *fractol);
+
 
 #endif

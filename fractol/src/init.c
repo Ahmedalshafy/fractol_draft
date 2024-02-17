@@ -42,7 +42,7 @@ void init(t_fractol *fractol, char **av)
 	fractol->zoom = 1.0;
 	fractol->flag = 0;
     if (fractol->name == "julia")
-        fractol->mouse = (t_complex){.x = ft_atof(av[2]), .y = ft_atof(av[3])};
+        fractol->mouse = (t_complex){.x = ft_atod(av[2]), .y = ft_atod(av[3])};
     else
         fractol->mouse = (t_complex){0};
     // fractol->color = 0x0000FF;
